@@ -13,4 +13,4 @@ Several additions to the child theme were made before this repository was publis
 
 Feel free to use or modify this child theme for your own website.
 
---- P.L., 4/19/2017
+--- P.L., 4/20/2017
