@@ -9,3 +9,16 @@ Template: twentyseventeen
 .content-wide {
   min-width: 100%;
 }
+
+.contact-form-element, .contact-privacy-notice {
+  display: inline-block;
+}
+.contact-form-element {
+  width: 60%;
+}
+.contact-privacy-notice {
+  width: 35%;
+  vertical-align: middle;
+  float: right;
+  margin-top: 20%;
+}
