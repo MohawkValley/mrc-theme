@@ -6,3 +6,6 @@ Template: twentyseventeen
 */
 
 /* Custom CSS */
+.content-wide {
+  min-width: 100%;
+}
