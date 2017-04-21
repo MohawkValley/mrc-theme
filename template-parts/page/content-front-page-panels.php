@@ -36,7 +36,18 @@ global $twentyseventeencounter;
 
 			</header><!-- .entry-header -->
 
-			<div class="entry-content">
+			<?php
+			/* Adding the helper class 'content-wide' for the pages named Welcome, Events and Activities, and Contact. This forces their content to 100%
+			   width so that CSS can position different section side-by-side within them.
+
+			   The Community page will probably also need this class, once we decide what to do with it. */
+				if (is_page(array('welcome', 'events', 'contact'))) {
+					echo "<div class=\"entry-content content-wide\">";
+				}
+				else {
+					echo "<div class=\"entry-content\">";
+				}
+			?>
 				<?php
 					/* translators: %s: Name of current post */
 					the_content( sprintf(
