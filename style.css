@@ -22,3 +22,13 @@ Template: twentyseventeen
   float: right;
   margin-top: 20%;
 }
+
+.post-type-attr {
+  padding-top: 1rem;
+  border-top: 1px dashed #001B51;
+}
+.post-type-attr p {
+  background-color: #ECFB11;
+  font-style: italic;
+  padding: 0.5rem;
+}

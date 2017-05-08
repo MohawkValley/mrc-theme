@@ -66,7 +66,7 @@
       // Adding copyright notice on Pastor's newsletter editorials
       if ( in_category('Pastor\'s editorial') ) {
         echo "<div class='post-type-attr'><p>
-These Newsletter entries are written by Pastor Brian Engel. Please do not re-use them without contacting him for permission.</p></div>";
+These Newsletter entries are written by Pastor Brian Engel. Please do not copy them or use them in any context without contacting him first.</p></div>";
       }
     ?>
   </div><!-- .entry-content -->
