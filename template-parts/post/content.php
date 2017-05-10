@@ -70,7 +70,6 @@
         <p>These Newsletter entries are written by Pastor Brian Engel. Please do not copy them or use them in any context without contacting him first.</p>
       </div>
     <?php } ?>
-    ?>
   </div><!-- .entry-content -->
 
   <?php if ( is_single() ) : ?>
