@@ -32,3 +32,7 @@ Template: twentyseventeen
   font-style: italic;
   padding: 0.5rem;
 }
+
+.post-type-signature {
+  text-align: center;
+}
