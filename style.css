@@ -44,7 +44,7 @@ img.attachmnt-twentyseventeen-featured-image.wp-post-image {
 }
 
 @media screen and (min-width: 1000px) {
-  article.type-post header.entry-header {
+  article.type-post .entry-header.not-front {
     position: absolute;
     top: -575px;
     z-index: 3;

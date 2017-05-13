@@ -18,7 +18,7 @@
       echo twentyseventeen_get_svg( array( 'icon' => 'thumb-tack' ) );
     endif;
   ?>
-  <header class="entry-header">
+  <header class="entry-header<?php is_single : echo " not-front" ?>">
     <?php
       if ( 'post' === get_post_type() ) :
         echo '<div class="entry-meta">';
