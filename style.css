@@ -38,7 +38,7 @@ Template: twentyseventeen
   margin-bottom: 0.75rem;
 }
 
-img.attachmnt-twentyseventeen-featured-image.wp-post-image {
+img.attachmnt-twentyseventeen-featured-image.wp-post-image, .page-template:not(.home) .single-featured-image-header > img.wp-post-image {
   height: 50vh;
   object-fit: cover;
 }
