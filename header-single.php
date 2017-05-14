@@ -31,10 +31,10 @@ $child_root = get_stylesheet_directory_uri();
 
   <header id="masthead" class="site-header" role="banner">
 
-    <div class="static-header">
-      <div class="static-header-media">
-        <div id="wp-static-header" class="wp-static-header">
-        <img class="site-branding" src="<?php echo $child_root ?>/mrc-static/single-page-header.jpg" alt="A horizontal stretch of the back of a shadowy church sanctuary, showing a section of three tall, narrow windows letting in blue light from outside" />
+    <div class="custom-header static-header">
+      <div class="custom-header-media static">
+        <div id="wp-custom-header" class="wp-custom-header static">
+        <img class="site-branding static" src="<?php echo $child_root ?>/mrc-static/single-page-header.jpg" alt="A horizontal stretch of the back of a shadowy church sanctuary, showing a section of three tall, narrow windows letting in blue light from outside" />
         </div>
       </div>
     </div>
