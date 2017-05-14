@@ -15,7 +15,8 @@
  * @version 1.0
  */
 
-get_header(); ?>
+// Getting the specialized header for individual pages, which outputs a different banner image:
+get_header('single'); ?>
 
 <div class="wrap">
 	<div id="primary" class="content-area">

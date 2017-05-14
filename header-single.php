@@ -12,6 +12,9 @@
  * @version 1.0
  */
 
+// Declaring the root directory of the child theme right up front, so I can use it throughout this file.
+$child_root = get_stylesheet_directory_uri();
+
 ?><!DOCTYPE html>
 <html <?php language_attributes(); ?> class="no-js no-svg">
 <head>
@@ -28,7 +31,13 @@
 
   <header id="masthead" class="site-header" role="banner">
 
-    <?php get_template_part( 'template-parts/header/header', 'image' ); ?>
+    <div class="static-header">
+      <div class="static-header-media">
+        <div id="wp-static-header" class="wp-static-header">
+        <img class="site-branding" src="<?php echo $child_root ?>/mrc-static/single-page-header.jpg" alt="A horizontal stretch of the back of a shadowy church sanctuary, showing a section of three tall, narrow windows letting in blue light from outside" />
+        </div>
+      </div>
+    </div>
 
     <?php if ( has_nav_menu( 'top' ) ) : ?>
       <div class="navigation-top">
