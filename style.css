@@ -60,5 +60,14 @@ article.type-post h1.entry-title {
 }
 
 .custom-header.static-header {
-  min-height: 179px;
+  min-height: 165px;
+  max-height: 200px;
+}
+
+img.site-branding.static {
+  padding: 0;
+}
+
+.site-branding.not-front {
+
 }

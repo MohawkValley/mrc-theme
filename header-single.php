@@ -37,6 +37,7 @@ $child_root = get_stylesheet_directory_uri();
         <img class="site-branding static" src="<?php echo $child_root ?>/mrc-static/single-page-header.jpg" alt="A horizontal stretch of the back of a shadowy church sanctuary, showing a section of three tall, narrow windows letting in blue light from outside" />
         </div>
       </div>
+      <?php get_template_part( 'template-parts/header/site', 'branding' ); ?>
     </div>
 
     <?php if ( has_nav_menu( 'top' ) ) : ?>
