@@ -11,7 +11,16 @@
  */
 
 ?>
+<?php 
 
+  // Inserting the title... I hope this doesn't put it where I don't want it:
+
+  if ( is_home() ) {
+    echo "<h2>";
+    the_title();
+    echo "</h2>";
+}
+?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php
     if ( is_sticky() && is_home() ) :
