@@ -11,7 +11,7 @@
 ?>
 
 <?php
-  if ( is_single() ) {
+  if ( is_single() || is_home() and !is_front_page() ) {
     echo "<div class=\"site-branding not-front\">";
   }
   else {
@@ -23,7 +23,7 @@
     <?php the_custom_logo(); ?>
 
     <?php
-      if ( is_single() ) {
+      if ( is_single() || is_home and !is_front_page() ) {
         echo "<div class=\"site-branding-text not-front\">";
       }
       else {
