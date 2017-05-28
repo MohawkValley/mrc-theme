@@ -87,19 +87,23 @@
     ?>
     <?php
       // Adding copyright notice on Pastor's newsletter editorials
-      if ( in_category('Pastor\'s editorial') ) {
+      if ( !is_home() ) {
+        if ( in_category('Pastor\'s editorial') ) {
     ?>
-      <div class="post-type-signature">
-        <?php
-          // Getting child theme directory.
-          $child_root = get_stylesheet_directory_uri();
-        ?>
-        <img src="<?php echo $child_root ?>/mrc-static/pastor-brian-signature.svg" alt="The hand-written, cursive signature of Pastor Brian" />
-      </div>
-      <div class="post-type-attr">
-        <p>These Newsletter entries are written by Pastor Brian Engel. Please do not copy them or use them in any context without contacting him first.</p>
-      </div>
-    <?php } ?>
+        <div class="post-type-signature">
+          <?php
+            // Getting child theme directory.
+            $child_root = get_stylesheet_directory_uri();
+          ?>
+          <img src="<?php echo $child_root ?>/mrc-static/pastor-brian-signature.svg" alt="The hand-written, cursive signature of Pastor Brian" />
+        </div>
+        <div class="post-type-attr">
+          <p>These Newsletter entries are written by Pastor Brian Engel. Please do not copy them or use them in any context without contacting him first.</p>
+        </div>
+    <?php
+        } // end in_category
+      } // end !is_home()
+    ?>
   </div><!-- .entry-content -->
 
   <?php if ( is_single() ) : ?>
