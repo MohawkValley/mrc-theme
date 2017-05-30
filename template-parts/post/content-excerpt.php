@@ -32,6 +32,13 @@
 
 		<?php if ( is_front_page() && ! is_home() ) {
 
+			// Output the featured image beside the excerpt for posts in the fornt page section.
+			if ( 'post' === get_post_type() ) {
+				echo "<div class=\"front-post-thumb\">";
+				the_post_thumbnail('medium');
+				echo "</div>";
+			}
+
 			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
 			the_title( sprintf( '<h3 class="entry-title"><a href="%s" rel="bookmark">', esc_url( get_permalink() ) ), '</a></h3>' );
 		} else {
