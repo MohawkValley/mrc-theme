@@ -67,3 +67,14 @@ article.type-post h1.entry-title {
 img.site-branding.static {
   padding: 0;
 }
+
+.front-post-thumb {
+  width: 300px;
+  height: 180px;
+  position: absolute;
+  left: -20rem;
+  top: 0;
+}
+.entry-header.front-feed {
+  position: relative;
+}

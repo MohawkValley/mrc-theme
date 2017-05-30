@@ -16,7 +16,14 @@
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 
-	<header class="entry-header">
+	<?php
+		if ( is_front_page() && ! is_home() ) {
+			echo "<header class=\"entry-header front-feed\">";
+		}
+		else {
+			echo "<header class=\"entry-header\">";
+		}
+	?>
 		<?php if ( 'post' === get_post_type() ) : ?>
 			<div class="entry-meta">
 				<?php
