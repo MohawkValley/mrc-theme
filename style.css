@@ -71,10 +71,12 @@ img.site-branding.static {
 .entry-header.front-feed {
   position: relative;
 }
+.front-post-thumb {
+  width: 300px;
+  height: 180px;
+}
 @media screen and (min-width: 1000px) {
   .front-post-thumb {
-    width: 300px;
-    height: 180px;
     position: absolute;
     left: -20rem;
     top: 0;

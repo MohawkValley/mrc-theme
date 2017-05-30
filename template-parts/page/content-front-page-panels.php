@@ -71,8 +71,14 @@ global $twentyseventeencounter;
 				?>
 
 		 		<?php if ( $recent_posts->have_posts() ) : ?>
-
-					<div class="recent-posts">
+					<?php
+						if ( is_front_page() && ! is_home() ) {
+							echo "<div class=\"recent-posts front-feed\">";
+						}
+						else {
+							echo "<div class=\"recent-posts\">";
+						}
+					?>
 
 						<?php
 						while ( $recent_posts->have_posts() ) : $recent_posts->the_post();
