@@ -40,7 +40,7 @@
 		<?php if ( is_front_page() && ! is_home() ) {
 
 			// Output the featured image beside the excerpt for posts in the fornt page section.
-			if ( 'post' === get_post_type() ) {
+			if ( 'post' === get_post_type() && has_post_thumbnail() ) {
 				echo "<div class=\"front-post-thumb\">";
 				the_post_thumbnail('medium');
 				echo "</div>";
