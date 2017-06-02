@@ -74,23 +74,22 @@ img.site-branding.static {
 .front-post-thumb {
   max-width: 300px;
   max-height: 180px;
+  position: absolute;
 }
 @media screen and (min-width: 768px) {
   .front-post-thumb {
-    position: absolute;
     left: -20rem;
     top: 0;
   }
 }
-@media screen and (max-width: 999px) {
-  ./*recent-posts.front-feed .entry-header.front-feed {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-  }*/
+@media screen and (max-width: 767px) {
   .front-post-thumb {
-    width: 75%;
-    /*height: auto;*/
+    top: 6rem;
   }
+  .entry-summary.front-feed:not(.no-thumb) {
+    margin-top: 180px;
+  }
+  .entry-summary.front-feed:not(.no-thumb) > p:first-of-type {
+    padding-top: 1rem;
+  } 
 }

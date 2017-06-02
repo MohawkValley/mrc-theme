@@ -44,6 +44,9 @@
 				echo "<div class=\"front-post-thumb\">";
 				the_post_thumbnail('medium');
 				echo "</div>";
+				if ( has_post_thumbnail() ) {
+					$thumbnail = true;
+				}
 			}
 
 			// The excerpt is being displayed within a front page section, so it's a lower hierarchy than h2.
@@ -53,7 +56,19 @@
 		} ?>
 	</header><!-- .entry-header -->
 
-	<div class="entry-summary">
+	<?php
+		if ( is_front_page() && ! is_home() ) {
+			if ( $thumbnail !== true ) {
+				echo "<div class=\"entry-summary front-feed no-thumb\">";
+			}
+			else {
+				echo "<div class=\"entry-summary front-feed\">";
+			}
+		 }
+		 else {
+		 	echo "<div class=\"entry-summary\">";
+		 }
+	?>
 		<?php the_excerpt(); ?>
 	</div><!-- .entry-summary -->
 
