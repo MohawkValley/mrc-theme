@@ -75,7 +75,7 @@ img.site-branding.static {
   max-width: 300px;
   max-height: 180px;
 }
-@media screen and (min-width: 1000px) {
+@media screen and (min-width: 768px) {
   .front-post-thumb {
     position: absolute;
     left: -20rem;
@@ -83,14 +83,14 @@ img.site-branding.static {
   }
 }
 @media screen and (max-width: 999px) {
-  .recent-posts.front-feed .entry-header.front-feed {
+  ./*recent-posts.front-feed .entry-header.front-feed {
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 100%;
-  }
+  }*/
   .front-post-thumb {
-    width: auto;
-    height: auto;
+    width: 75%;
+    /*height: auto;*/
   }
 }
