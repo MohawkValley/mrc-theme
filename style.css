@@ -83,13 +83,19 @@ img.site-branding.static {
   }
 }
 @media screen and (max-width: 767px) {
+  .entry-header.front-feed {
+    display: flex;
+    flex-direction: column;
+  }
   .front-post-thumb {
+    align-self: center;
     top: 6rem;
   }
   .entry-summary.front-feed:not(.no-thumb) {
-    margin-top: 180px;
+    margin-top: 185px;
   }
   .entry-summary.front-feed:not(.no-thumb) > p:first-of-type {
     padding-top: 1rem;
+    vertical-align: bottom;
   } 
 }
