@@ -3,3 +3,22 @@ function twentyseventeen_custom_enqueue_child_theme_styles() {
 	wp_enqueue_style('parent-theme-css', get_template_directory_uri() . '/style.css');
 }
 add_action('wp_enqueue_scripts', 'twentyseventeen_custom_enqueue_child_theme_styles', 11);
+
+// Copying the srouce of the built-in functinon so we can filter for it, using it conditionally instead of the normal the_excerpt
+// ---
+// function the_manual_excerpt() {
+// 	echo apply_filters( 'the_manual_excerpt', get_the_excerpt() );
+// }
+// function for outputting even manually added excerpts with "Continue reading" links
+// Source: https://wordpress.stackexchange.com/questions/134143/how-can-i-create-a-read-more-link-using-the-excerpt-on-a-static-front-page
+// ---
+// function new_excerpt_more($more) {
+// 	return '';
+// }
+// add_filter('excerpt_more', 'new_excerpt_more', 21);
+// function the_excerpt_more_link($excerpt) {
+// 	$post = get_post();
+// 	$excerpt .= '... <a class="more-link" href="'. get_permalink($post->ID) . '">Continue reading</a><span class="screen-reader-text"> "%s"</span>"';
+// 	return $excerpt;
+// }
+// add_filter('the_manual_excerpt', 'the_excerpt_more_link', 21);
