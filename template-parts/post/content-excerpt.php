@@ -70,10 +70,8 @@
 		 }
 	?>
 		<?php
-		// Test if has custom excerpt
-		// if so, return twentyseventeen_excerpt_more()
 		the_excerpt();
-		// Code inspired by Read More Excerpt Link plug-in
+		// Code for custom excerpt inspired by Read More Excerpt Link plug-in
 		if ( has_excerpt() ) {
 			$continuelink .= '<a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . 'Continue reading' . '</a>';
 			echo $continuelink;
