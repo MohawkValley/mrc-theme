@@ -129,21 +129,16 @@ img.site-branding.static {
     float: right;
   }
 }
-@media sceen and (max-width: 999px) {
-  /*.donate-button, .fb_iframe_widget {
+@media screen and (max-width: 999px) {
+  .donate-button, .fb_iframe_widget {
     display: block;
-  }*/
-  .donate-button {
-    display: flex;
-    justify-content: center;
   }
   .donate-button-label {
-    margin: 0 auto !important;
+    margin: 0 auto;
     padding-bottom: 1rem;
   }
   .fb_iframe_widget {
     margin: 0 auto;
-    display: block;
   }
 }
 
