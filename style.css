@@ -106,3 +106,18 @@ img.site-branding.static {
     vertical-align: bottom;
   } 
 }
+
+.entry-content {
+  position: relative;
+}
+.donate-button {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-block;
+  max-width: 400px;
+  vertical-align: middle
+}
+.donate-button form {
+  text-align: center;
+}
