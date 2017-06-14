@@ -110,17 +110,47 @@ img.site-branding.static {
 .entry-content {
   position: relative;
 }
-.donate-button {
-  position: absolute;
-  top: 1rem;
-  left: 1rem;
-  display: inline-block;
-  max-width: 400px;
-  vertical-align: middle
-}
 .donate-button form {
   text-align: center;
 }
-.fb_iframe_widget {
-  float: right;
+.donate-button br {
+  display: none;
+}
+@media screen and (min-width: 1000px) {
+  .donate-button {
+    position: absolute;
+    top: 1rem;
+    left: 1rem;
+    display: inline-block;
+    max-width: 400px;
+    vertical-align: middle
+  }
+  .fb_iframe_widget {
+    float: right;
+  }
+}
+@media sceen and (max-width: 999px) {
+  /*.donate-button, .fb_iframe_widget {
+    display: block;
+  }*/
+  .donate-button {
+    display: flex;
+    justify-content: center;
+  }
+  .donate-button-label {
+    margin: 0 auto !important;
+    padding-bottom: 1rem;
+  }
+  .fb_iframe_widget {
+    margin: 0 auto;
+    display: block;
+  }
+}
+
+.donate-button-label {
+  color: #327399;
+  font-style: italic;
+  max-width: 300px;
+  padding-top: 0.5rem;
+  border-top: 7px dotted #EDFB11;
 }
