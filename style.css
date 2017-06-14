@@ -121,3 +121,6 @@ img.site-branding.static {
 .donate-button form {
   text-align: center;
 }
+.fb_iframe_widget {
+  float: right;
+}
