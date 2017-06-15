@@ -49,6 +49,10 @@ global $twentyseventeencounter;
 				else {
 					echo "<div class=\"entry-content\">";
 				}
+				// When outputting the Community page, set a variable that can be referenced in the footer template to output a <script> element that controls some of the behavior of the donate button.
+				if (is_page('community')) {
+					$donateButton = true;
+				}
 			?>
 				<?php
 					/* translators: %s: Name of current post */
