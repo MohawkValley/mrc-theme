@@ -30,7 +30,13 @@ global $twentyseventeencounter;
 	<div class="panel-content">
 		<div class="wrap">
 			<header class="entry-header">
-				<?php the_title( '<h2 class="entry-title">', '</h2>' ); ?>
+				<?php
+					$slug = get_post_field('post_name');
+					echo "<h2 class=\"entry-title\" id=\"";
+					echo $slug . "\">";
+					the_title();
+					echo "</h2>"
+				?>
 
 				<?php twentyseventeen_edit_link( get_the_ID() ); ?>
 
