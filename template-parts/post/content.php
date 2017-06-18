@@ -98,7 +98,7 @@
           <img src="<?php echo $child_root ?>/mrc-static/pastor-brian-signature.svg" alt="The hand-written, cursive signature of Pastor Brian" />
         </div>
         <div class="post-type-attr">
-          <p>These Newsletter entries are written by Pastor Brian Engel. Please do not copy them or use them in any context without contacting him first.</p>
+          <p>These Newsletter entries are written by Rev. Brian Engel. Please do not copy them or use them in any context without contacting him first.</p>
         </div>
     <?php
         } // end in_category
