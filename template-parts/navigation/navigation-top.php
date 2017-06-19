@@ -25,6 +25,7 @@
         'theme_location' => 'top',
         'menu'           => 'Blog Menu',
         'menu_id'        => 'top-menu',
+        'menu_class'     => 'menu-blog',
       ) );
     }
   ?>
