@@ -143,9 +143,6 @@ img.site-branding.static {
 }
 
 .donate-button-label {
-  color: #327399;
-  font-style: italic;
   max-width: 300px;
   padding-top: 0.5rem;
-  border-top: 7px dotted #EDFB11;
 }
