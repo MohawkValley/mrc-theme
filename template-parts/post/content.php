@@ -67,10 +67,18 @@
     <?php
       /* translators: %s: Name of current post */
       if ( is_home() && !is_front_page() ) {
-        the_excerpt( sprintf(
-          __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
-          get_the_title()
-        ) );
+        // Use a "continue reading" link even if the page has a manual excerpt
+        if ( has_excerpt() ) {
+          $continuelink .= '<a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . 'Continue reading' . '</a>';
+          the_excerpt();
+          echo $continuelink;
+        }
+        else {
+          the_excerpt( sprintf(
+            __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
+            get_the_title()
+          ) );
+      }
       }
       else {
         the_content( sprintf(
