@@ -15,25 +15,30 @@
   // Inserting the title... I hope this doesn't put it where I don't want it:
   if ( ( is_home() && ! is_front_page() ) || is_archive() ) {
 ?>
-  <h2 class="feed-entry-title"><a href="<?php the_permalink(); ?>">
+<h2 class="feed-entry-title"><a href="<?php the_permalink(); ?>">
 <?php
     the_title();
     echo "</a></h2>";
 ?>
-  <div class="feed-entry-meta">
-    <div class="feed-entry-date">
+<div class="feed-entry-meta">
 <?php
+    echo '<div class="feed-entry-date">';
     the_date();
-?>
-    </div>
-<?php
-  if ( has_category() ) {
-    echo '<div class="feed-entry-category">';
-    the_category();
     echo '</div>';
-  }
+    if ( has_category() ) {
+      echo '<div class="feed-entry-category">';
+      the_category();
+      echo '</div>';
+    }
+    if ( has_tag() ) {
+      echo '<div class="feed-entry-tags">';
+      the_tags();
+      echo '</div>';
+    }
+  } // end is_home() && ! is_front_page() [...]
+  // Closing div 'feed-entry-meta' just below end of PHP here:
 ?>
-<?php } ?>
+</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php
     if ( is_sticky() && is_home() ) :
