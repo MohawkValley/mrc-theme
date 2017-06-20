@@ -19,8 +19,21 @@
 <?php
     the_title();
     echo "</a></h2>";
-}
 ?>
+  <div class="feed-entry-meta">
+    <div class="feed-entry-date">
+<?php
+    the_date();
+?>
+    </div>
+<?php
+  if ( has_category() ) {
+    echo '<div class="feed-entry-category">';
+    the_category();
+    echo '</div>';
+  }
+?>
+<?php } ?>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php
     if ( is_sticky() && is_home() ) :
@@ -81,7 +94,7 @@
             __( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
             get_the_title()
           ) );
-      }
+        }
       }
       else {
         the_content( sprintf(
