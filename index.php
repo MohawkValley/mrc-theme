@@ -15,7 +15,7 @@
  * @version 1.0
  */
 
-if ( is_home() && !is_front_page() ) {
+if ( ! is_front_page() ) {
 	// In this case, true if it's the post feed page
 	get_header('single');
 }
