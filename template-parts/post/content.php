@@ -27,11 +27,21 @@
     echo '</div>';
     if ( has_category() ) {
       echo '<div class="feed-entry-category">';
+      // Output the SVG icon used by the theme for category lists
+      echo twentyseventeen_get_svg( array(
+        'icon' => 'folder-open',
+      ) );
+      // Output the category
       the_category();
       echo '</div>';
     }
     if ( has_tag() ) {
       echo '<div class="feed-entry-tags">';
+      // Output the SVG icon used by the theme for tag lists
+      echo twentyseventeen_get_svg( array(
+        'icon' => 'hashtag',
+      ));
+      // Output the list of tags
       the_tags();
       echo '</div>';
     }
