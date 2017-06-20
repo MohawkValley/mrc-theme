@@ -26,7 +26,7 @@
     the_date();
     echo '</div>';
     if ( has_category() ) {
-      echo '<div class="feed-entry-category">';
+      echo '<div class="feed-entry-categories">';
       // Output the SVG icon used by the theme for category lists
       echo twentyseventeen_get_svg( array(
         'icon' => 'folder-open',

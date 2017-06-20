@@ -146,3 +146,14 @@ img.site-branding.static {
   max-width: 300px;
   padding-top: 0.5rem;
 }
+
+.feed-entry-categories ul.post-categories {
+  display: inline-block;
+  vertical-align: top;
+  margin: 0;
+  list-style: none;
+}
+
+.feed-entry-categories > svg.icon, .feed-entry-tags > svg.icon {
+  padding-right: 3px;
+}
