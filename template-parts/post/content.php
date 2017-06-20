@@ -13,9 +13,9 @@
 ?>
 <?php 
   // Inserting the title... I hope this doesn't put it where I don't want it:
-  if ( is_home() ) {
+  if ( ( is_home() && ! is_front_page() ) || is_archive() ) {
 ?>
-  <h2><a href="<?php the_permalink(); ?>">
+  <h2 class="feed-entry-title"><a href="<?php the_permalink(); ?>">
 <?php
     the_title();
     echo "</a></h2>";
