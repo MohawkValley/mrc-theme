@@ -31,25 +31,28 @@
     if ( is_front_page() ) {
       echo "<header class=\"entry-header\">";
     }
-    elseif ( is_home() ) {
+    elseif ( ! is_home() ) {
       echo "<header class=\"entry-header not-front\">";
     }
   ?>
     <?php
-      if ( 'post' === get_post_type() ) :
-        echo '<div class="entry-meta">';
-          if ( is_single() ) :
-            twentyseventeen_posted_on();
-          else :
-            echo twentyseventeen_time_link();
-            twentyseventeen_edit_link();
-          endif;
-        echo '</div><!-- .entry-meta -->';
+      if ( ! is_home() ) :
+        if ( 'post' === get_post_type() ) :
+          echo '<div class="entry-meta">';
+            if ( is_single() ) :
+              twentyseventeen_posted_on();
+            else :
+              echo twentyseventeen_time_link();
+              twentyseventeen_edit_link();
+            endif;
+          echo '</div><!-- .entry-meta -->';
+        endif;
       endif;
 
       if ( is_single() ) {
         the_title( '<h1 class="entry-title">', '</h1>' );
-      } else {
+      }
+      elseif ( ! is_home() ) {
         the_title( '<h2 class="entry-title"><a href="' . esc_url( get_permalink() ) . '" rel="bookmark">', '</a></h2>' );
       }
     ?>
