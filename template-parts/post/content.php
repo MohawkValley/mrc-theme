@@ -69,7 +69,7 @@
   <div class="entry-content">
     <?php
       /* translators: %s: Name of current post */
-      if ( is_home() && !is_front_page() ) {
+      if ( ( is_home() && ! is_front_page() ) || is_archive() ) {
         // Use a "continue reading" link even if the page has a manual excerpt
         if ( has_excerpt() ) {
           $continuelink .= '<a class="more-link" href="' . get_permalink( get_the_ID() ) . '">' . 'Continue reading' . '</a>';
@@ -98,7 +98,7 @@
     ?>
     <?php
       // Adding copyright notice on Pastor's newsletter editorials
-      if ( !is_home() ) {
+      if ( ! is_home() && ! is_archive() ) {
         if ( in_category('Pastor\'s editorial') ) {
     ?>
         <div class="post-type-signature">
