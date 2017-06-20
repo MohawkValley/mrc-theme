@@ -31,7 +31,7 @@
     if ( is_front_page() ) {
       echo "<header class=\"entry-header\">";
     }
-    else {
+    elseif ( is_home() ) {
       echo "<header class=\"entry-header not-front\">";
     }
   ?>
