@@ -20,8 +20,10 @@
     the_title();
     echo "</a></h2>";
 ?>
-<div class="feed-entry-meta">
 <?php
+    if ( ! is_single() ) {
+      echo '<div class="feed-entry-meta">';
+    }
     echo '<div class="feed-entry-date">';
     the_date();
     echo '</div>';
@@ -43,6 +45,9 @@
       ));
       // Output the list of tags
       the_tags();
+      echo '</div>';
+    }
+    if ( ! is_single() ) {
       echo '</div>';
     }
   } // end is_home() && ! is_front_page() [...]

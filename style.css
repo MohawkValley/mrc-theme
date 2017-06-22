@@ -157,3 +157,12 @@ img.site-branding.static {
 .feed-entry-categories > svg.icon, .feed-entry-tags > svg.icon {
   padding-right: 3px;
 }
+
+.feed-entry-categories, .feed-entry-tags {
+  display: inline-block;
+  max-width: 48%;
+}
+
+// .feed-entry-tags {
+//   float: right;
+// }
