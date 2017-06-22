@@ -46,9 +46,7 @@
       echo '</div>';
     }
   } // end is_home() && ! is_front_page() [...]
-  // Closing div 'feed-entry-meta' just below end of PHP here:
 ?>
-</div>
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
   <?php
     if ( is_sticky() && is_home() ) :
