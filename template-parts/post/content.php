@@ -35,9 +35,11 @@
       // Output the SVG icon used by the theme for category lists
       echo twentyseventeen_get_svg( array(
         'icon' => 'folder-open',
+        'title' => __( 'Categories', 'textdomain' ),
+        'desc' => __( 'Icon depicting an open folder to represent categories', 'textdomain' ),
       ) );
-      // Output the category
-      the_category();
+      // Output the category, separating with commas rather than line breaks
+      the_category(', ');
       echo '</div>';
     }
     if ( has_tag() ) {
@@ -45,9 +47,11 @@
       // Output the SVG icon used by the theme for tag lists
       echo twentyseventeen_get_svg( array(
         'icon' => 'hashtag',
+        'title' => __( 'Tags', 'textdomain' ),
+        'desc' => __( 'Icon depicting the hash character to represent tags', 'textdomain' ),
       ));
-      // Output the list of tags
-      the_tags();
+      // Output the list of tags, omitting the default "Tags: " prefix
+      the_tags('');
       echo '</div>';
     }
     if ( ! is_single() ) {
