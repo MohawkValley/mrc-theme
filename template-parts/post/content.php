@@ -21,12 +21,15 @@
     echo "</a></h2>";
 ?>
 <?php
-    if ( ! is_single() ) {
-      echo '<div class="feed-entry-meta">';
-    }
     echo '<div class="feed-entry-date">';
     the_date();
     echo '</div>';
+    // I shouldn't need this condition, but I was debugging misplaced <div> elements that were appearing on single post pages that I think were somehome coming from this code...
+    if ( ! is_single() ) {
+      echo '<div class="feed-entry-meta">';
+      if ( has_category() || has_tag() )
+        echo '<div class="feed-entry-wrap">';
+    }
     if ( has_category() ) {
       echo '<div class="feed-entry-categories">';
       // Output the SVG icon used by the theme for category lists
@@ -48,7 +51,7 @@
       echo '</div>';
     }
     if ( ! is_single() ) {
-      echo '</div>';
+      echo '</div></div>'; // end of feed-entry-wrap and fee-dentry-meta
     }
   } // end is_home() && ! is_front_page() [...]
 ?>

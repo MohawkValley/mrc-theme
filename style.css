@@ -158,11 +158,13 @@ img.site-branding.static {
   padding-right: 3px;
 }
 
-.feed-entry-categories, .feed-entry-tags {
-  display: inline-block;
-  max-width: 48%;
+.feed-entry-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
-// .feed-entry-tags {
-//   float: right;
+// .feed-entry-categories, .feed-entry-tags {
+//   display: inline-block;
+//   max-width: 48%;
 // }
