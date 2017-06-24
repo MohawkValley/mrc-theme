@@ -41,6 +41,10 @@ else {
 			<?php
 			if ( have_posts() ) :
 
+				if ( is_home() && ! is_front_page() )	{
+					echo "<section class='feed-post-listing'>";
+				}
+
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
 
@@ -50,6 +54,10 @@ else {
 					 * called content-___.php (where ___ is the Post Format name) and that will be used instead.
 					 */
 					get_template_part( 'template-parts/post/content', get_post_format() );
+
+				if ( is_home() && ! is_front_page() ) {
+									echo "</section>";
+				}
 
 				endwhile;
 
