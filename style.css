@@ -171,6 +171,11 @@ img.site-branding.static {
   margin-bottom: 0.5rem;
 }
 
+.feed-entry-categories, .feed-entry-tags {
+  text-indent: -15px;
+  padding-left: 15px;
+}
+
 .feed-entry-categories a, .feed-entry-tags a {
   font-style: italic;
   -webkit-transition: color 80ms ease-in, -webkit-box-shadow 130ms ease-in-out;
