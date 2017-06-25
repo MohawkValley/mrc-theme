@@ -41,12 +41,13 @@ else {
 			<?php
 			if ( have_posts() ) :
 
-				if ( is_home() && ! is_front_page() )	{
-					echo "<section class='feed-post-listing'>";
-				}
 
 				/* Start the Loop */
 				while ( have_posts() ) : the_post();
+				
+					if ( is_home() && ! is_front_page() )	{
+						echo "<section class='feed-post-listing'>";
+					}
 
 					/*
 					 * Include the Post-Format-specific template for the content.
@@ -55,9 +56,9 @@ else {
 					 */
 					get_template_part( 'template-parts/post/content', get_post_format() );
 
-				if ( is_home() && ! is_front_page() ) {
-									echo "</section>";
-				}
+					if ( is_home() && ! is_front_page() ) {
+										echo "</section>";
+					}
 
 				endwhile;
 
