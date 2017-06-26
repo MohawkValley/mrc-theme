@@ -218,3 +218,8 @@ img.site-branding.static {
 ul.menu-blog li:nth-of-type(2) {
   border-right: 1px solid #E5F0F7;
 }
+
+.site-closer a, .site-closer p {
+  font-variant: small-caps;
+  margin-top: 1rem;
+}
