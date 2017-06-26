@@ -166,18 +166,25 @@ img.site-branding.static {
 }
 
 .feed-entry-date {
-  text-align: center;
+  text-align: right;
   font-size: 1.25rem;
   margin-bottom: 0.5rem;
+  margin-right: 0.25rem;
 }
 
 .feed-entry-title {
-  margin-bottom: 0.25rem;
+  margin-bottom: 0;
 }
 
 .feed-entry-categories, .feed-entry-tags {
   text-indent: -15px;
   padding-left: 15px;
+}
+.feed-entry-categories {
+  margin-left: 0.25rem;
+}
+.feed-entry-tags {
+  margin-right: 0.25rem;
 }
 
 .feed-entry-categories a, .feed-entry-tags a {
