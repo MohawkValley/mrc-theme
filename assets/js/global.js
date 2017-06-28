@@ -13,6 +13,8 @@
 		$sidebar = $body.find( '#secondary' ),
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
+		// Added to support front page scrolling:
+		$navMenuScrollDown = $body.find ( '.entry-title' ),
 		isFrontPage = $body.hasClass( 'twentyseventeen-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationHeight,
@@ -211,6 +213,28 @@
 		if ( true === supportsInlineSVG() ) {
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
+		// Added to support front page section coding, based on https://kinsta.com/blog/twenty-seventeen-theme/#svgs
+		$navMenuScrollDown.click( function(e) {
+			// grab target URL
+			var url = $(this).attr("href");
+			// get # position
+			var index = url.indexOf("#");
+			if (index == -1) {
+				return;
+			}
+			// extraxt the target id value
+			var targetId = url.substring(index);
+			e.preventDefault();
+			// I can probably be cleaner than this ??
+			$("a[href*='#']").parent().removeClass("current-menu-item current-page-item");
+			// add classes
+			$(this).closest("li").addClass("current-menu-item current-page-item");
+			// scroll down
+			$(window).scrollTo( targetId, {
+				duration: 800,
+				offset: { top: menuTop - navigationOuterHeight }
+			});
+		});
 
 		if ( true === supportsFixedBackground() ) {
 			document.documentElement.className += ' background-fixed';
