@@ -205,7 +205,6 @@ function twentyseventeen_social_links_icons() {
 		'wordpress.com'   => 'wordpress',
 		'yelp.com'        => 'yelp',
 		'youtube.com'     => 'youtube',
-		'rca.org'         => 'rca',
 	);
 
 	/**
