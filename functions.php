@@ -4,6 +4,25 @@ function twentyseventeen_custom_enqueue_child_theme_styles() {
 }
 add_action('wp_enqueue_scripts', 'twentyseventeen_custom_enqueue_child_theme_styles', 11);
 
+// |-------
+//  Including the new custom SVG sprite file to add more icon options for the social media menu
+//  Source of solution: https://kinsta.com/blog/twenty-seventeen-theme/#svgs
+function childtheme_include_svg_icons() {
+	// Define SVG sprite file.
+	$custom_svg_icons = get_theme_file_path( '/assets/images/mrc-svg-icons.svg' );
+	if ( file_exists( $custom_svg_icons ) ) {
+		require_once( $custom_svg_icons );
+	}
+}
+add_action( 'wp_footer', 'childtheme_include_svg_icons', 99999 );
+
+function childtheme_social_links_icons( $social_links_icons ) {
+	$social_links_icons['rca.org'] = 'rca';
+	return $social_links_icons;
+}
+add_filter( 'twentyseventeen_social_links_icons', 'childtheme_social_links_icons' );
+// -------|
+
 // Copying the srouce of the built-in functinon so we can filter for it, using it conditionally instead of the normal the_excerpt
 // ---
 // function the_manual_excerpt() {
