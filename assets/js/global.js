@@ -14,7 +14,7 @@
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		// Added to support front page scrolling:
-		$navMenuScrollDown = $body.find ( '.entry-title' ),
+		$navMenuScrollDown = $body.find ( '.menu-item' ),
 		isFrontPage = $body.hasClass( 'twentyseventeen-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationHeight,
@@ -214,6 +214,7 @@
 			document.documentElement.className = document.documentElement.className.replace( /(\s*)no-svg(\s*)/, '$1svg$2' );
 		}
 		// Added to support front page section coding, based on https://kinsta.com/blog/twenty-seventeen-theme/#svgs
+		console.log("We're at the new code!");
 		$navMenuScrollDown.click( function(e) {
 			// grab target URL
 			var url = $(this).attr("href");
@@ -224,6 +225,7 @@
 			}
 			// extraxt the target id value
 			var targetId = url.substring(index);
+			console.log("targetId variable: "+targetId);
 			e.preventDefault();
 			// I can probably be cleaner than this ??
 			$("a[href*='#']").parent().removeClass("current-menu-item current-page-item");
@@ -234,6 +236,7 @@
 				duration: 800,
 				offset: { top: menuTop - navigationOuterHeight }
 			});
+				console.log("ScrollTo function read!");
 		});
 
 		if ( true === supportsFixedBackground() ) {
