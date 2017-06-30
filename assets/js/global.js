@@ -14,7 +14,7 @@
 		$entryContent = $body.find( '.entry-content' ),
 		$formatQuote = $body.find( '.format-quote blockquote' ),
 		// Added to support front page scrolling:
-		$navMenuScrollDown = $body.find ( '.menu-item' ),
+		$navMenuScrollDown = $body.find ( '.menu-item > a' ),
 		isFrontPage = $body.hasClass( 'twentyseventeen-front-page' ) || $body.hasClass( 'home blog' ),
 		navigationFixedClass = 'site-navigation-fixed',
 		navigationHeight,
@@ -218,6 +218,7 @@
 		$navMenuScrollDown.click( function(e) {
 			// grab target URL
 			var url = $(this).attr("href");
+			console.log("The URL slug is "+url);
 			// get # position
 			var index = url.indexOf("#");
 			if (index == -1) {
