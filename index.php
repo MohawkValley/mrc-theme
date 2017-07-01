@@ -46,7 +46,7 @@ else {
 				while ( have_posts() ) : the_post();
 				
 					if ( is_home() && ! is_front_page() )	{
-						echo "<section class='feed-post-listing'>";
+						echo "<section class='feed-post-item'>";
 					}
 
 					/*

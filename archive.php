@@ -32,7 +32,7 @@ get_header('single'); ?>
 			/* Start the Loop */
 			while ( have_posts() ) : the_post();
 
-				echo "<section class='feed-post-listing'>";
+				echo "<section class='feed-post-item'>";
 
 				/*
 				 * Include the Post-Format-specific template for the content.
