@@ -215,10 +215,24 @@
 		}
 		// Added to support front page section coding, based on https://kinsta.com/blog/twenty-seventeen-theme/#svgs
 		console.log("We're at the new code!");
+		var $homeLink = $navMenuScrollDown.first().text();
+		console.log("First menu link text: "+$homeLink);
 		$navMenuScrollDown.click( function(e) {
-			// grab target URL
+			var $clickedLink = $(this).text();
+			console.log("My item is: "+$clickedLink);
+			// if the home link is clicked, scroll to the top
+			if ($clickedLink == $homeLink) {
+				$(window).scrollTo( "#page", {
+					duration: 800,
+					offset: { top: menuTop - navigationOuterHeight }
+				})
+			}
 			var url = $(this).attr("href");
 			console.log("The URL slug is "+url);
+			// If there's no #, then it's either the homepage or the blogpage
+			if (url.indexOf("#") == 0) {
+				console.log("Either homepage or blog page.");
+			}
 			// get # position
 			var index = url.indexOf("#");
 			if (index == -1) {
