@@ -225,7 +225,11 @@
 				$(window).scrollTo( "#page", {
 					duration: 800,
 					offset: { top: menuTop - navigationOuterHeight }
-				})
+				});
+				// don't follow link when clicking on Home link from the homepage, instead just scroll up
+				if (window.location.pathname == '/') {
+					return false;
+				}
 			}
 			var url = $(this).attr("href");
 			console.log("The URL slug is "+url);
