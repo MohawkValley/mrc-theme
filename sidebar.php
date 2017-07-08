@@ -19,9 +19,9 @@ if ( ! is_active_sidebar( 'sidebar-1' ) ) {
 	<?php dynamic_sidebar( 'sidebar-1' ); ?>
 	<?php
 		if ( ! is_single() ) {
-			echo "<div><h2 class='widget-title'>Subscribe by email</h2>";
+			echo "<div>";
 			// Include code provided by 'Email Subscribers' plugin:
-			es_subbox($namefield = "YES", $desc = "", $group = "Public");
+			es_subbox($namefield = "NO", $desc = "<h2 class='widget-title'>Subscribe by email</h2>", $group = "Public");
 			echo "</div>";
 		}
 	?>

@@ -225,3 +225,7 @@ ul.menu-blog li:nth-of-type(2) {
 .site-closer a, .site-closer p {
   margin-top: 1rem;
 }
+
+.es_caption {
+  padding-bottom: 0;
+}
