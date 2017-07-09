@@ -62,6 +62,9 @@ global $twentyseventeencounter;
 			?>
 				<?php
 					/* translators: %s: Name of current post */
+					// if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) {
+					// 	echo "<a href='/blog/' class='button-link' id='home-blog-button'>Open All Posts</button>";
+					// }
 					the_content( sprintf(
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 						get_the_title()
@@ -72,8 +75,8 @@ global $twentyseventeencounter;
 			<?php
 			// Show recent blog posts if is blog posts page (Note that get_option returns a string, so we're casting the result as an int).
 			if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) : ?>
+				<a href="/blog/" class="button-link" id="home-blog-button">Open All Posts</a>
 
-				<a href="/blog/" class="button-link" id="home-blog-button">Open All Posts</button>
 
 				<?php // Show four most recent posts.
 				$recent_posts = new WP_Query( array(
