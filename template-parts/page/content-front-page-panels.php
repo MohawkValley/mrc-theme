@@ -29,7 +29,15 @@ global $twentyseventeencounter;
 
 	<div class="panel-content">
 		<div class="wrap">
-			<header class="entry-header">
+		<?php
+			// The <header> definition for the blog posts page needs another CSS hook, which can generically be associated with the property of cotaining a button
+			if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) {
+				echo "<header class=\"entry-header section-header-button\">";		
+			}
+			else {
+				echo "<header class=\"entry-header\">";
+			}
+		?>
 				<?php
 					$slug = get_post_field('post_name');
 					echo "<h2 class=\"entry-title\" id=\"";
@@ -39,6 +47,13 @@ global $twentyseventeencounter;
 				?>
 
 				<?php twentyseventeen_edit_link( get_the_ID() ); ?>
+
+				<?php
+				// Outbut button-like link leading to the post page in the header of the section for blog posts
+				if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) {
+					echo "<a href='/blog/' class='button-link' id='home-blog-button'>Open All Posts</a>";
+				}
+				?>
 
 			</header><!-- .entry-header -->
 
@@ -62,6 +77,9 @@ global $twentyseventeencounter;
 			?>
 				<?php
 					/* translators: %s: Name of current post */
+					// if ( get_the_ID() === (int) get_option( 'page_for_posts' )  ) {
+					// 	echo "<a href='/blog/' class='button-link' id='home-blog-button'>Open All Posts</button>";
+					// }
 					the_content( sprintf(
 						__( 'Continue reading<span class="screen-reader-text"> "%s"</span>', 'twentyseventeen' ),
 						get_the_title()
