@@ -43,5 +43,29 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
+<?php
+
+  // The child theme stylesheet displaces the text content above the featured image for normal posts, selected by the default
+  // 'article.type-post' class structure. However, the relative positioning leaves a gap, so this is conditionally closed by
+  // constraining the max-height of the <main> element by the value of the 232px displacement, subtracted from its default height.
+
+  if ( is_single() ) {
+    if ( get_post_type( get_the_ID() ) == 'post' ) {
+?>
+
+<script>
+	console.log("*** Running <main> tag shortener ***");
+	var mainEl = $('#main');
+	var oldHeight = mainEl.height();
+	var newHeight = oldHeight - 232;
+	mainEl.height(newHeight);
+</script>
+
+
+<?php
+    }
+  }
+?>
+
 </body>
 </html>
