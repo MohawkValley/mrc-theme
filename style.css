@@ -137,7 +137,7 @@ img.site-branding.static {
 }
 
 @media screen and (min-width: 1000px) {
-  article.type-post .entry-content, article.type-post .entry-footer, article.type-post+.comments-area, article.type-post+.post-navigation {
+  .feed-post-listing > article.type-post .entry-content, .feed-post-listing > article.type-post .entry-footer, .feed-post-listing > article.type-post+.comments-area, .feed-post-listing > article.type-post+.post-navigation, .feed-post-listing + .comments-area, .feed-post-listing ~ .post-navigation {
     position: relative;
     bottom: 232px;
   }
