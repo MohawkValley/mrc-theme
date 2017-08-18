@@ -135,6 +135,20 @@ img.site-branding.static {
 .entry-content {
   position: relative;
 }
+
+@media screen and (min-width: 1000px) {
+  article.type-post .entry-content, article.type-post .entry-footer, article.type-post+.comments-area, article.type-post+.post-navigation {
+    position: relative;
+    bottom: 232px;
+  }
+  /* Article text displaced over featured image, <main> reduced by 232px in JS */
+  article.type-post .entry-content {
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.85);
+    z-index: 10;
+  }
+}
+
 .donate-button form {
   text-align: center;
 }
