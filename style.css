@@ -145,7 +145,6 @@ img.site-branding.static {
   article.type-post .entry-content {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.85);
-    z-index: 10;
   }
 }
 
