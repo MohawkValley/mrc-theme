@@ -23,6 +23,23 @@ $child_root = get_stylesheet_directory_uri();
 <link rel="profile" href="http://gmpg.org/xfn/11">
 
 <?php wp_head(); ?>
+
+<?php
+
+  if ( is_single() && get_post_type( get_the_ID() ) == 'post' ) {
+?>
+
+<style>
+  footer {
+    position: relative;
+    bottom: 232px;
+  }
+</style>
+
+<?php
+  }
+?>
+
 </head>
 
 <body <?php body_class(); ?>>
