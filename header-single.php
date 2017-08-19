@@ -30,9 +30,11 @@ $child_root = get_stylesheet_directory_uri();
 ?>
 
 <style>
-  footer {
-    position: relative;
-    bottom: 232px;
+  @media screen and (min-width: 1000px) {
+    footer {
+      position: relative;
+      bottom: 232px;
+    }
   }
 </style>
 

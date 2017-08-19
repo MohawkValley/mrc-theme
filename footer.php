@@ -65,15 +65,17 @@
 <script>
 	console.log("*** Running <main> tag shortener ***");
 	jQuery(document).ready(function($) {
-		var container = $('#page');
-		console.log("Container object: "+container.className);
-		var oldHeight = container.height();
-		console.log("Old height: "+oldHeight);
-		var newHeight = oldHeight - 232;
-		console.log("Computed new height: "+newHeight);
-		var newHeightString = newHeight + 'px';
-		container.css('overflow', 'hidden');
-		container.css('max-height', newHeightString);
+		if ($(window).width() > 999) {
+			var container = $('#page');
+			console.log("Container object: "+container.className);
+			var oldHeight = container.height();
+			console.log("Old height: "+oldHeight);
+			var newHeight = oldHeight - 232;
+			console.log("Computed new height: "+newHeight);
+			var newHeightString = newHeight + 'px';
+			container.css('overflow', 'hidden');
+			container.css('max-height', newHeightString);
+		}
 	});
 </script>
 
