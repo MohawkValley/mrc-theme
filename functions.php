@@ -6,6 +6,9 @@ function twentyseventeen_custom_enqueue_child_theme_styles() {
 	if ( is_front_page() ) {
 		wp_enqueue_script( 'twentyseventeen-global', get_theme_file_uri( '/assets/js/global.js' ), array('jquery'), '1.0', true );
 	}
+	if ( is_single() && get_post_type( get_the_ID() ) == 'post' ) {
+		wp_enqueue_script( 'twentyseventeen-post-pageslice', get_theme_file_uri( '/assets/js/pageslice.js' ), array('jquery'), '1.0', true );
+	}
 }
 add_action('wp_enqueue_scripts', 'twentyseventeen_custom_enqueue_child_theme_styles', 11);
 

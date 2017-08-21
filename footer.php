@@ -43,49 +43,5 @@
 </div><!-- #page -->
 <?php wp_footer(); ?>
 
-<?php
-
-  // The child theme stylesheet displaces the text content above the featured image for normal posts, selected by the default
-  // 'article.type-post' class structure. However, the relative positioning leaves a gap, so this is conditionally closed by
-  // constraining the max-height of the <main> element by the value of the 232px displacement, subtracted from its default height.
-
-  if ( is_single() ) {
-    if ( get_post_type( get_the_ID() ) == 'post' ) {
-?>
-
-<?php
-  // The child theme stylesheet displaces the text content above the featured image for normal posts, selected by the default
-  // 'article.type-post' class structure. However, the relative positioning leaves a gap, so this is conditionally closed by
-  // constraining the max-height of the <main> element by the value of the 232px displacement, subtracted from its default height.
-
-  if ( is_single() ) {
-    if ( get_post_type( get_the_ID() ) == 'post' ) {
-?>
-
-<script>
-	jQuery(document).ready(function($) {
-		if ($(window).width() > 999) {
-			var container = $('#page');
-			var oldHeight = container.height();
-			var newHeight = oldHeight - 232;
-			var newHeightString = newHeight + 'px';
-			container.css('overflow', 'hidden');
-			container.css('max-height', newHeightString);
-		}
-	});
-</script>
-
-
-<?php
-    }
-  }
-?>
-
-
-<?php
-    }
-  }
-?>
-
 </body>
 </html>
