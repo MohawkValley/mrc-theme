@@ -142,7 +142,7 @@ img.site-branding.static {
     bottom: 232px;
   }
   /* Article text displaced over featured image, <main> reduced by 232px in JS */
-  article.type-post .entry-content {
+  .feed-post-listing > article.type-post .entry-content {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.85);
   }
