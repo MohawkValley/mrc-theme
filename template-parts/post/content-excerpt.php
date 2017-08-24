@@ -39,10 +39,14 @@
 
 		<?php if ( is_front_page() && ! is_home() ) {
 
-			// Output the featured image beside the excerpt for posts in the fornt page section.
+			// Output the featured image beside the excerpt for posts in the front page section.
 			if ( 'post' === get_post_type() && has_post_thumbnail() ) {
 				echo "<div class=\"front-post-thumb\">";
-				the_post_thumbnail('medium');
+				$homeThumb = wp_get_attachment_image_src(get_post_thumbnail_id(get_the_ID()), 'home-feed-thumbnail', false);
+				$homeThumbTxt = get_post_meta(get_post_thumbnail_id(get_the_ID()), '_wp_attachment_image_alt', true);
+		?>
+			<img src="<?php echo esc_url($homeThumb[0]); ?>" alt="<?php echo $homeThumbTxt; ?>" />
+		<?php
 				echo "</div>";
 				if ( has_post_thumbnail() ) {
 					$thumbnail = true;

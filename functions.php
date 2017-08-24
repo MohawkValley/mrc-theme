@@ -30,23 +30,9 @@ function childtheme_social_links_icons( $social_links_icons ) {
 	return $social_links_icons;
 }
 add_filter( 'twentyseventeen_social_links_icons', 'childtheme_social_links_icons' );
-// -------|
 
-// Copying the srouce of the built-in functinon so we can filter for it, using it conditionally instead of the normal the_excerpt
-// ---
-// function the_manual_excerpt() {
-// 	echo apply_filters( 'the_manual_excerpt', get_the_excerpt() );
-// }
-// function for outputting even manually added excerpts with "Continue reading" links
-// Source: https://wordpress.stackexchange.com/questions/134143/how-can-i-create-a-read-more-link-using-the-excerpt-on-a-static-front-page
-// ---
-// function new_excerpt_more($more) {
-// 	return '';
-// }
-// add_filter('excerpt_more', 'new_excerpt_more', 21);
-// function the_excerpt_more_link($excerpt) {
-// 	$post = get_post();
-// 	$excerpt .= '... <a class="more-link" href="'. get_permalink($post->ID) . '">Continue reading</a><span class="screen-reader-text"> "%s"</span>"';
-// 	return $excerpt;
-// }
-// add_filter('the_manual_excerpt', 'the_excerpt_more_link', 21);
+// -------|
+function twentyseventeen_child_setup() {
+	add_image_size( 'home-feed-thumbnail', 300, 180, true );
+}
+add_action( 'after_setup_theme', 'twentyseventeen_child_setup' );
