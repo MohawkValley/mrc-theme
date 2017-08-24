@@ -137,12 +137,12 @@ img.site-branding.static {
 }
 
 @media screen and (min-width: 1000px) {
-  .feed-post-listing > article.type-post:[class*="format-standard"] .entry-content, .feed-post-listing > article.type-post .entry-footer, .feed-post-listing > article.type-post+.comments-area, .feed-post-listing > article.type-post+.post-navigation, .feed-post-listing + .comments-area, .feed-post-listing ~ .post-navigation {
+  .feed-post-listing > article.type-post.format-standard .entry-content, .feed-post-listing > article.type-post .entry-footer, .feed-post-listing > article.type-post+.comments-area, .feed-post-listing > article.type-post+.post-navigation, .feed-post-listing + .comments-area, .feed-post-listing ~ .post-navigation {
     position: relative;
     bottom: 232px;
   }
   /* Article text displaced over featured image, <main> reduced by 232px in JS */
-  .feed-post-listing > article.type-post:[class*="format-standard"] .entry-content {
+  .feed-post-listing > article.type-post.format-standard .entry-content {
     padding: 1rem;
     background-color: rgba(255, 255, 255, 0.85);
   }
