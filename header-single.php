@@ -26,7 +26,8 @@ $child_root = get_stylesheet_directory_uri();
 
 <?php
 
-  if ( is_single() && get_post_type( get_the_ID() ) == 'post' ) {
+  // Only output CSS for bumping up the footer to match raised text content if the format is the default post format (false value)
+  if ( is_single() && get_post_format( get_the_ID() ) == false ) {
 ?>
 
 <style>
