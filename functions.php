@@ -34,5 +34,14 @@ add_filter( 'twentyseventeen_social_links_icons', 'childtheme_social_links_icons
 // -------|
 function twentyseventeen_child_setup() {
 	add_image_size( 'home-feed-thumbnail', 300, 180, true );
+	add_image_size( 'post-internal-full-width', 482 ); // 482 is 10 px less than the text area width on a post in desktop view
 }
 add_action( 'after_setup_theme', 'twentyseventeen_child_setup' );
+
+add_filter( 'image_size_names_choose', 'childtheme_selectable_image_sizes' );
+
+function childtheme_selectable_image_sizes( $sizes ) {
+	return array_merge( $sizes, array(
+		'post-internal-full-width' => __( 'Internal Full Column Width' ),
+	) );
+}
