@@ -129,7 +129,7 @@ img.site-branding.static {
   .entry-summary.front-feed:not(.no-thumb) > p:first-of-type {
     padding-top: 1rem;
     vertical-align: bottom;
-  } 
+  }
 }
 
 .entry-content {
@@ -163,8 +163,9 @@ img.site-branding.static {
     max-width: 400px;
     vertical-align: middle
   }
-  .fb_iframe_widget {
+  .fb-page {
     float: right;
+    min-height: 500px;
   }
 }
 @media screen and (max-width: 999px) {
@@ -285,5 +286,3 @@ ul.menu-blog li:nth-of-type(2) {
   -webkit-transition: background 0.2s;
   transition: background 0.2s;
 }
-
-
