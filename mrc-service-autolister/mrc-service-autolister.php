@@ -29,8 +29,20 @@ if ($DEBUG_MODE) { # Remove when removing debug code
 	print("Default time zone: ".$tzone."\n\n");
 }
 
-// Find today's date
+// Create date objects to represent the targeted future dates. (Source of solution: user4446130 at stackoverflow.com/questions/1188728/get-the-date-of-next-monday-tuesday-etc)
+$nextSunday = new DateTime();
+$secondSunday = new DateTime();
+$thirdSunday = new DateTime();
 
 // Find the next day following today that is a Sunday (or a certain number of the next Sundays, like maybe the next 3 Sundays -- maybe make this configurable)
+$nextSunday->modify('next sunday');
+$secondSunday->modify('second sunday');
+$thirdSunday->modify('third sunday');
+
+if ($DEBUG_MODE) { # Remove when removing debug code
+	print("Date of next Sunday: ".$nextSunday->format('m-d-Y')."\n");
+	print("Date of a week from next Sunday: ".$secondSunday->format('m-d-Y')."\n");
+	print("Date of two weeks from next Sunday: ".$thirdSunday->format('m-d-Y')."\n\n");
+}
 
 // Output the next Sunday with a configurable note, with a configurable HTML structure
