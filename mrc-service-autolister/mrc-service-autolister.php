@@ -18,8 +18,8 @@ if ($argv[1] === "debug") {
 
 // Security precaution suggested by codex.wordpress.org/Writing_a_Plugin
 if (!$DEBUG_MODE) { # Remove the condition when removing debug code
-	defined( 'ABSPATH' ) or die( 'Only internal PHP scripts allowed.' );
-}
+	defined( 'ABSPATH' ) or die( 'Only internal PHP scripts allowed.' ); 
+ }
 
 // Set the default timezone to Eastern Standard Time
 date_default_timezone_set('America/New_York');
@@ -46,3 +46,16 @@ if ($DEBUG_MODE) { # Remove when removing debug code
 }
 
 // Output the next Sunday with a configurable note, with a configurable HTML structure
+
+// Hook in to main front page,
+
+?>
+
+<div class='plugin-wrap autolister'>
+	<h3>Upcoming Services</h3>
+	<ul>
+		<li><?php echo $nextSunday->format('M. d, Y'); ?></li>
+		<li><?php echo $secondSunday->format('M. d, Y'); ?></li>
+		<li><?php echo $thirdSunday->format('M. d, Y'); ?></li>
+	</ul>
+</div>
