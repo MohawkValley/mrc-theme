@@ -9,7 +9,7 @@
 /* ****************************
  * CLI Debug mode
  * Remove all associated debug code before publishing plugin on public website!
- ************** */
+ ****************************** */
 global $DEBUG_MODE;
 if ($argv[1] === "debug") {
 	$DEBUG_MODE = 1;
@@ -49,13 +49,23 @@ if ($DEBUG_MODE) { # Remove when removing debug code
 
 // Hook in to main front page,
 
-?>
 
-<div class='plugin-wrap autolister'>
-	<h3>Upcoming Services</h3>
-	<ul>
-		<li><?php echo $nextSunday->format('M. d, Y'); ?></li>
-		<li><?php echo $secondSunday->format('M. d, Y'); ?></li>
-		<li><?php echo $thirdSunday->format('M. d, Y'); ?></li>
-	</ul>
-</div>
+/* ******************************
+ * Functions for template output
+ ******************************** */
+/* This function actually places the HTML and content for the date list on the page. Calling this function is how the functionality of this plugin is invoked. To use this plugin, paste the following line into one of the PHP template files in your child theme (not your base theme). The <? and ?> aren't necessary if you happen to be pasting it into an existing PHP block.
+	<?php mrc_the_date_list(); ?>
+*/
+
+function mrc_the_date_list() {
+	?>
+	<div class='plugin-wrap autolister'>
+		<h3>Upcoming Services</h3>
+		<ul>
+			<li><?php echo $nextSunday->format('M. d, Y'); ?></li>
+			<li><?php echo $secondSunday->format('M. d, Y'); ?></li>
+			<li><?php echo $thirdSunday->format('M. d, Y'); ?></li>
+		</ul>
+	</div>
+	<?php
+}
