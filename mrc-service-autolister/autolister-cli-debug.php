@@ -6,11 +6,28 @@
 	Author: Strivenword
 */
 
+/* ****************************
+ * CLI Debug mode
+ * Remove all associated debug code before publishing plugin on public website!
+ ****************************** */
+$DEBUG_MODE;
+if ($argv[1] === "debug") {
+	$DEBUG_MODE = 1;
+	print("\n............ CLI Debug Mode ............\n\n");
+}
+
 // Security precaution suggested by codex.wordpress.org/Writing_a_Plugin
-defined( 'ABSPATH' ) or die( 'Only internal PHP scripts allowed.' ); 
+if (!$DEBUG_MODE) { # Remove the condition when removing debug code
+	defined( 'ABSPATH' ) or die( 'Only internal PHP scripts allowed.' ); 
+ }
 
 // Set the default timezone to Eastern Standard Time
 date_default_timezone_set('America/New_York');
+
+if ($DEBUG_MODE) { # Remove when removing debug code
+	$tzone = date_default_timezone_get();
+	print("Default time zone: ".$tzone."\n\n");
+}
 
 // Create date objects to represent the targeted future dates. (Source of solution: user4446130 at stackoverflow.com/questions/1188728/get-the-date-of-next-monday-tuesday-etc)
 $nextSunday = new DateTime();
@@ -21,6 +38,12 @@ $thirdSunday = new DateTime();
 $nextSunday->modify('next sunday');
 $secondSunday->modify('second sunday');
 $thirdSunday->modify('third sunday');
+
+if ($DEBUG_MODE) { # Remove when removing debug code
+	print("Date of next Sunday: ".$nextSunday->format('m-d-Y')."\n");
+	print("Date of a week from next Sunday: ".$secondSunday->format('m-d-Y')."\n");
+	print("Date of two weeks from next Sunday: ".$thirdSunday->format('m-d-Y')."\n\n");
+}
 
 // Output the next Sunday with a configurable note, with a configurable HTML structure
 
