@@ -11,10 +11,10 @@
  * Remove all associated debug code before publishing plugin on public website!
  ****************************** */
 global $DEBUG_MODE;
-if ($argv[1] === "debug") {
-	$DEBUG_MODE = 1;
-	print("\n............ CLI Debug Mode ............\n\n");
-}
+// if ($argv[1] === "debug") {
+// 	$DEBUG_MODE = 1;
+// 	print("\n............ CLI Debug Mode ............\n\n");
+// }
 
 // Security precaution suggested by codex.wordpress.org/Writing_a_Plugin
 if (!$DEBUG_MODE) { # Remove the condition when removing debug code
@@ -30,9 +30,9 @@ if ($DEBUG_MODE) { # Remove when removing debug code
 }
 
 // Create date objects to represent the targeted future dates. (Source of solution: user4446130 at stackoverflow.com/questions/1188728/get-the-date-of-next-monday-tuesday-etc)
-$nextSunday = new DateTime();
-$secondSunday = new DateTime();
-$thirdSunday = new DateTime();
+global $nextSunday = new DateTime();
+global $secondSunday = new DateTime();
+global $thirdSunday = new DateTime();
 
 // Find the next day following today that is a Sunday (or a certain number of the next Sundays, like maybe the next 3 Sundays -- maybe make this configurable)
 $nextSunday->modify('next sunday');
