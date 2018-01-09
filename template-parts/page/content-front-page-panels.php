@@ -37,6 +37,10 @@ global $twentyseventeencounter;
 			else {
 				echo "<header class=\"entry-header\">";
 			}
+			// Checking to see if this is the Events section (by testing whether the permalink's base is 'events'), and outputting the markup from our custom plugin 'mrc-service-autolister' if so
+			if ( basename(get_the_permalink()) === 'events' ) {
+				mrc_the_date_list();
+			}
 		?>
 				<?php
 					$slug = get_post_field('post_name');

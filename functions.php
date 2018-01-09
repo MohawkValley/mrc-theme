@@ -12,6 +12,13 @@ function twentyseventeen_custom_enqueue_child_theme_styles() {
 	}
 }
 add_action('wp_enqueue_scripts', 'twentyseventeen_custom_enqueue_child_theme_styles', 11);
+		
+// |-------
+//  Custom plugin stuff (the service autolister)
+	// add_shortcode( 'future_services', 'mrc_the_date_list' );
+	// add_action( 'shutdown', 'mrc_the_date_list' );
+	register_activation_hook( 'mrc-service-autolister/mrc-service-autolister.php', 'mrc_the_date_list' );
+// -------|
 
 // |-------
 //  Including the new custom SVG sprite file to add more icon options for the social media menu
